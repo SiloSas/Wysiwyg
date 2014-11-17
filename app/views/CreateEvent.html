@@ -1,0 +1,24 @@
+<h1>CreateEvent</h1>
+<h2>GetEventByUrl</h2>
+<input ng-model="eventFbUrl" placeholder="Event Facebook" ng-change="GetEventByUrl()">
+<h2>SearchEvent</h2>
+<input ng-model="eventFbName" placeholder="Event Facebook" ng-change="searchEvent()">
+        <div ng-click="GetEventById(SearchEvent.id)" ng-repeat="SearchEvent in searchEvents">{{SearchEvent.name}}</div>
+<img src="{{event.cover.source}}"/>
+{{event.name}}
+        <wysiwyg class="column large-12">
+            <div class="column large-12 zIndex5">
+                <div class="fleft">
+                    <button ng-repeat="style in styles | filter : 'button'" ng-click="{{style.function}}">{{style.name}}</button>
+                </div>
+                <div ng-repeat="style in styles | filter : 'select'" class="fleft">
+                    <button ng-click="{{style.name}} = !{{style.name}}">{{style.name}}</button>
+                    <div ng-show="{{style.name}}" ng-model="name = style.name" class="absolute">
+                        <button  ng-repeat="style in styles | filter : 'option' | filter : {typeName : name}" ng-click="{{style.function}}">{{style.name}}</button>
+                    </div>
+                </div>
+            </div><br>
+            <div id="content" contenteditable="true" class="row marginTop50 minHeight450" ng-model="content" strip-br="true" required><div><ng-carousel></ng-carousel></div>{{event.description}}</div>
+            <textarea ng-model="content" style="width: 100%" rows="10"></textarea>
+            <iframe src="views/wysiwyg.html" width="350"></iframe>
+        </wysiwyg>

@@ -1,0 +1,7 @@
+app.directive('ngCarousel',
+function(){
+    return{
+      restrict : 'E',
+      template:'<div class="switch-container height100p"><div ng-repeat="img in imgs" class="animate-show carouselContent" ng-show="selected.name == img.name" ng-bind-html="img.content"></div></div>'
+    }
+});

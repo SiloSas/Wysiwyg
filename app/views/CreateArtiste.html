@@ -1,0 +1,6 @@
+<h1>CreateArtist</h1>
+<h2>SearchArtiste</h2>
+<input ng-model="artisteFb" placeholder="Search Artiste" ng-change="searchArtist()">
+<div ng-click="GetArtisteById(artisteSearch.id)" ng-repeat="artisteSearch in artistes | filter : 'Musician' | limitTo : 10">{{artisteSearch.name}}</div>
+<img src="{{artiste.cover.source}}"/>
+<div>{{artiste.name}}</div>
